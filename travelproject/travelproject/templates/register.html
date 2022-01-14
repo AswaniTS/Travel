@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Here</title>
+	<style>
+	input[type=submit]{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 25px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+input[type=text],input[type=email],input[type=password] {
+  padding: 12px 50px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+</style>
+</head>
+<body style="text-align:center;background-color:#F333FF;line-height: 200%;">
+<div style="border-style: groove;margin: 10px 200px;background-color:#D47AE8;">
+	<h1>Registration Form</h1>
+	<form action="register" method="post">
+		{% csrf_token %}
+		<input type="text" name="username" placeholder="Type your username"><br>
+		<input type="text" name="first_name" placeholder="Type your First name"><br>
+		<input type="text" name="last_name" placeholder="Type your Lastname"><br>
+		<input type="email" name="email" placeholder="Type your email"><br>
+		<input type="password" name="password" placeholder="Type your password"><br>
+		<input type="password" name="password1" placeholder="confirm your password"><br>
+		<input type="submit">
+
+	</form>
+
+
+</div>
+<div style="border-style: groove;margin: 10px 200px;background-color:#D47AE8;">{% for msg in messages %}
+	<h2 style="color:red;"> {{msg}}</h2>
+	{% endfor %}
+</div>
+
+</body>
+</html>
